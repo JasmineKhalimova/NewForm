@@ -1,43 +1,153 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="js/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
-    <form>
-        <div class="container">
-                <h2>Simple Collapsible Inside The Form</h2>
+<bod>
+    <div id="title">
+        <h3>Item for Sale</h3>
+    </div>
+    <form class="SellForm">
+        <div class="container" id="product_title">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+                <label for="product_title_input">Title</label>
+                <input class="form-control" id="product_title_input" type="text" rows="3" required="required" data-error="Please enter title">
+                <div id="text_err"></div><input type="text" name="formfrom" value="Top_Form" hidden>
+                <button 
+                    onclick="hideProductInfo()"
+                    id="next_button" 
+                    type="button" 
+                    class="btn btn-warning" 
+                    data-toggle="collapse" 
+                    data-target="#product_category" 
+                    aria-expanded="false" 
+                    aria-controls="product_category" 
+                    name="next_button" 
+                    disabled>
+                    Next
+                </button>
             </div>
-            <div id="demo" class="collapse">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-            </div>
-            <div id="demo" class="collapse">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">Example file input</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="card card-body" id="product_note">
+                <img src="https://cdn3.iconfinder.com/data/icons/iconomous-the-web/512/36-Info-512.png" alt="Tip Icon">
+                <p style="display: inline-block;">Descriptive titles are the best fuel for high performing ads!</p>
             </div>
         </div>
+        <div class="container collapse"  id="product_category">
+            <div class="card card-body">
+                <h3 style="text-align: center;">Select a category </h3>
+                <div class="list-group">
+                    <a href="#product_details" class="list-group-item list-group-item-action" data-toggle="collapse" role="button"aria-expanded="false" aria-controls="product_details">Equipment</a>
+                    <a href="#product_details" class="list-group-item list-group-item-action" data-toggle="collapse" role="button"aria-expanded="false" aria-controls="product_details">Serivces</a>
+                    <a href="#product_details" class="list-group-item list-group-item-action" data-toggle="collapse" role="button"aria-expanded="false" aria-controls="product_details">Real Estate</a>
+                    <a href="#product_details" class="list-group-item list-group-item-action" data-toggle="collapse" role="button"aria-expanded="false" aria-controls="product_details">Trucks & Trailers</a>
+                    <a href="#product_details" class="list-group-item list-group-item-action" data-toggle="collapse" role="button"aria-expanded="false" aria-controls="product_details">Jobs</a>
+                    <a href="#product_details" class="list-group-item list-group-item-action" data-toggle="collapse" role="button"aria-expanded="false" aria-controls="product_details">Others</a>
+                </div>
+            </div>
+        </div>
+        <div class="container collapse multi-collapse" id="product_details">
+            <div class="card card-body" id="product_detail">
+                <h3>Media</h3>
+                <h4>Add photos to attract interest to your ad</h4>
+                <p>
+                    Include pictures with different angles and details.
+                    You can upload a maximum of 10 photos, that are at least 300px wide or tall (we recommend at least 1000px).
+                    Drag and drop to change the order of your pictures. 
+                </p>
+                <div class="image_container" style="display: inline-block;">
+                    <div class="form-group" style="display: inline-block;">
+                        <input type="file" class="form-control-file" id="Image_placeholder1">
+                    </div>
+                    <div class="form-group" style="display: inline-block;">
+                        <input type="file" class="form-control-file" id="Image_placeholder2">
+                    </div>
+                    <div class="form-group" style="display: inline-block;">
+                        <input type="file" class="form-control-file" id="Image_placeholder3">
+                    </div>
+                </div>
+                <div class="product_social_media_links">
+                    <label for="youtube_video">YouTube Video</label>
+                    <input type="text" class="form-control" id="youtube_video" placeholder="YouTube video optional">
+                    <label for="website_link">Website URL: </label><br>
+                    <input class="form-check-input" type="checkbox" value="" id="website_link" style="margin-left: 5px;">
+                    <label class="form-check-label" for="website_link" style="margin-left: 30px;">Link to your website -$4.95</label>
+                    <input type="email" class="form-control" id="website_link" placeholder="Website URl optional">
+                </div>
+            </div>
+            <div class="card card-body" id="product_price" >
+                <h3>Price</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="price" value="">Price $ <input type="text" name="price" placeholder="Please enter product price"/>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Free" id="Free" value="option2">
+                    <label class="form-check-label" for="Free">Free</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Please Contact" id="PContact" value="option3">
+                    <label class="form-check-label" for="PContact">Please Contact</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Trade" id="Trade" value="option4">
+                    <label class="form-check-label" for="Trade">Swap/Trade</label>
+                </div>
+            </div>
+            <div class="card card-body" id="product_location">
+                <h3>Location</h3>
+                <div class="form-row">
+                    <div class="col-7">
+                        <input type="text" class="form-control" placeholder="City">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="State">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Zip">
+                    </div>
+                    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px; width: 100%; margin-top: 10px;">
+                        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                        style="border:0;height: 500px; width: 100%; margin-top: 10px;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-body" id="contact_info">
+                <h3>Contact Information</h3>
+                <div class="form-group">
+                    <label for="phone_number"> Phone Number</label>
+                    <input type="phone" class="form-control" id="phone_number" placeholder="+1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+            </div>
+            <div class="card card-body" id="ad_promotion">
+                <h3>Promote My Ad </h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="TopAd"> Top Ad </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">Website URL</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="HighlightAd"> Highlight Ad</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                    <label class="form-check-label" for="HomepageGallery">Homepage Gallery</label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-warning">Sell</button>
+            <button type="button" class="btn btn-info">Preview</button>
+        </div>
     </form>
-    <script src="js/myscripts.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

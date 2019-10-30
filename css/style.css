@@ -1,0 +1,52 @@
+
+body{
+    background-color:#f8f9f9;
+    width: 100%;
+}
+#title{
+    background-color: #ecaa0b;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+.SellForm{
+    width: 50%;
+    margin: auto;
+}
+.container{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#next_button{
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#product_note{
+    background-color: #f0fafc;
+    border-color: #9cd4f2;
+    padding: 40px;
+    display: inline-block;
+    width: 100%
+}
+#product_note img{
+    width: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.card-body{
+    margin-top: 50px;
+    width: 100%; 
+    margin-bottom: 50px;
+}
+.has-error input[type="text"] {
+    border: 1px solid #a94442;
+}
+#product_title_input{
+    height: 100px;
+}
