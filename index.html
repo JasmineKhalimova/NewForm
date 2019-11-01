@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<bod>
+<body>
     <div id="title">
         <h3>Item for Sale</h3>
     </div>
@@ -17,8 +15,9 @@
                 <label for="product_title_input">Title</label>
                 <input class="form-control" id="product_title_input" type="text" rows="3" required="required" data-error="Please enter title">
                 <div id="text_err"></div><input type="text" name="formfrom" value="Top_Form" hidden>
-                <button 
+                <input 
                     onclick="hideProductInfo()"
+                    value="Next"
                     id="next_button" 
                     type="button" 
                     class="btn btn-warning" 
@@ -28,8 +27,6 @@
                     aria-controls="product_category" 
                     name="next_button" 
                     disabled>
-                    Next
-                </button>
             </div>
             <div class="card card-body" id="product_note">
                 <img src="https://cdn3.iconfinder.com/data/icons/iconomous-the-web/512/36-Info-512.png" alt="Tip Icon">
@@ -148,6 +145,9 @@
             <button type="button" class="btn btn-info">Preview</button>
         </div>
     </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

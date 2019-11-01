@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #ecaa0b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.sell-form-header{
+    background-color: #ecaa0b;
+    padding: 10px;
+}
+#user_image{
+    display: block;
+    margin: 0px 0px 11px 0px;
+}
+</style>
+</head>
+<body>
+<div class="sell-form-header">
+<h3>Item For Sale</h3>
+</div>
+<div class="container">
+
+  <form action="/action_page.php">
+    <label for="pname">Product Name</label>
+    <input type="text" id="pname" name="productname" placeholder="Product Name.." required>
+
+    <!-- Price Input -->
+    <input type="radio" name="price" value="Fit Description">Free<br>
+    <input type="radio" name="price" value="Swap/Trade">Please Contact<br>
+    <input type="radio" name="price" value="Swap/Trade">Swap/Trade<br>
+    <input type="radio" name="price" value="">Price $ <input type="text" name="price" placeholder="Please enter product price"/>
+
+    <!-- Country Input -->
+    <label for="country">Country</label>
+    <input type="text" id="country" name="country" placeholder="Please enter city" required>
+
+    <!-- Category Input -->
+    <label for="category">Category</label>
+    <select id="category" name="category">
+      <option value="trucks">Trucks & Trailers</option>
+      <option value="services">Services</option>
+      <option value="equipment">Equipment</option>
+      <option value="real-estate">Real Estate</option>
+      <option value="jobs">Jobs</option>
+      <option value="others">Others</option>
+    </select>
+
+    <!-- Description  -->
+    <label for="subject">Description</label>
+    <textarea id="subject" name="subject" placeholder="Product description" style="height:200px" required></textarea>
+
+    <input type="file" id="user_image">
+
+    <input type="submit" value="Sell">
+  </form>
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("user_image");
+  x.disabled = true;
+}
+</script>
+</body>
+</html>
